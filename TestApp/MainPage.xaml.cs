@@ -9,7 +9,7 @@ public partial class MainPage : ContentPage
 
 	private async void Button_Clicked(object sender, EventArgs e)
 	{
-		var costumFileType =
+		var gifsOnly =
 			new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
 			{
 				{DevicePlatform.iOS, new[] {"com.adobe.gif"} },

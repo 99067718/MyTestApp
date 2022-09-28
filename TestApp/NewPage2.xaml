@@ -4,9 +4,11 @@
              x:Class="TestApp.NewPage2"
              Title="*Speaks in Morse code*">
     <VerticalStackLayout>
-        <Entry MinimumWidthRequest="200" MinimumHeightRequest="100" MaximumWidthRequest="300" x:Name="Text" Placeholder="Type anything in here, it will automatically get translated." Text=""/>
+        <Entry MinimumWidthRequest="200" MinimumHeightRequest="100" MaximumWidthRequest="300" x:Name="Text" Placeholder="Type anything in here, it will automatically get translated." PlaceholderColor="Wheat" Text=""/>
         <Button Text="Confirm" Clicked="Button_Clicked"/>
-        <Label Text="Loop Morse Code" HorizontalOptions="Center"/>
-        <CheckBox IsChecked="False" x:Name="IsLooping"/>
+        <HorizontalStackLayout>
+            <Label Text="Loop Morse Code" VerticalOptions="Center"/>
+            <CheckBox IsChecked="False" x:Name="IsLooping" VerticalOptions="Center"/>
+        </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>
