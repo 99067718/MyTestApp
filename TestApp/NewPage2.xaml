@@ -6,5 +6,7 @@
     <VerticalStackLayout>
         <Entry MinimumWidthRequest="200" MinimumHeightRequest="100" MaximumWidthRequest="300" x:Name="Text" Placeholder="Type anything in here, it will automatically get translated." Text=""/>
         <Button Text="Confirm" Clicked="Button_Clicked"/>
+        <Label Text="Loop Morse Code" HorizontalOptions="Center"/>
+        <CheckBox IsChecked="False" x:Name="IsLooping"/>
     </VerticalStackLayout>
 </ContentPage>

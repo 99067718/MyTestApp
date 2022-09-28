@@ -62,24 +62,31 @@ public partial class NewPage2 : ContentPage
             }
             await DisplayAlert("title", $"{morse}", "ok");
             await Task.Delay(2000);
-
-            foreach (var b in morse)
+            while (true)
             {
-                if (b.ToString() == ".")
+                foreach (var b in morse)
                 {
-                    await Flashlight.TurnOnAsync();
-                    await Task.Delay(200);
+                    if (b.ToString() == ".")
+                    {
+                        await Flashlight.TurnOnAsync();
+                        await Task.Delay(200);
+                    }
+                    else if (b.ToString() == "–")
+                    {
+                        await Flashlight.TurnOnAsync();
+                        await Task.Delay(500);
+                    }
+                    else if (b.ToString() == " " || b.ToString() == " ")
+                    {
+                        await Task.Delay(200);
+                    }
+                    await Flashlight.TurnOffAsync();
                 }
-                else if(b.ToString() == "–")
+                if (!IsLooping.IsChecked)
                 {
-                    await Flashlight.TurnOnAsync();
-                    await Task.Delay(500);
+                    break;
                 }
-                else if(b.ToString() == " " || b.ToString() == " ")
-                {
-                    await Task.Delay(200);
-                }
-                await Flashlight.TurnOffAsync();
+                await Task.Delay(1000);
             }
             await DisplayAlert("Finished", "Sending code is complete", "ok");
         }
