@@ -15,8 +15,8 @@ public partial class NewPage2 : ContentPage
 		{
 			var translator = new Dictionary<string, string>();
 			translator.Add(" ", " ");
-            translator.Add("A", ".-");
-            translator.Add("B", "-...");
+            translator.Add("A", ". -");
+            translator.Add("B", "- . . .");
             translator.Add("C", "– · – ·");
             translator.Add("D", "– · ·");
             translator.Add("E", "·");
