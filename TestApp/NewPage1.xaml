@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:effectsView="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             x:Class="TestApp.NewPage1"
+             Title="NewPage1">
+    <VerticalStackLayout>
+        <effectsView:SfEffectsView TouchDownEffects="Scale" TouchUpEffects="Rotation" ScaleFactor="0.5" Angle="360" RotationAnimationDuration="1000" LongPressEffects="Highlight">
+            <Label Text="Bob the builder"/>
+        </effectsView:SfEffectsView>
+    </VerticalStackLayout>
+</ContentPage>
