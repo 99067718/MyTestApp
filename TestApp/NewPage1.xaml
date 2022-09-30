@@ -6,7 +6,7 @@
              Title="NewPage1">
     <VerticalStackLayout>
         <effectsView:SfEffectsView TouchDownEffects="Scale" TouchUpEffects="Rotation" ScaleFactor="0.5" Angle="360" RotationAnimationDuration="1000" LongPressEffects="Highlight">
-            <Label Text="Bob the builder"/>
+            <Label Text="" x:Name="ShowTime"/>
         </effectsView:SfEffectsView>
     </VerticalStackLayout>
 </ContentPage>

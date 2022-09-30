@@ -12,13 +12,12 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
     <ShellContent
-        Title="Charts"
+        Title="Time"
         ContentTemplate="{DataTemplate local:NewPage1}"
-        Route="Chart" />
+        Route="Time" />
     <ShellContent
         Title="Morsecode"
         ContentTemplate="{DataTemplate local:NewPage2}"
         Route="Morse"/>
-
 
 </Shell>
