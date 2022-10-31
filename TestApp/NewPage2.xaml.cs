@@ -1,6 +1,4 @@
-﻿using Android.Webkit;
-
-namespace TestApp;
+﻿namespace TestApp;
 
 public partial class NewPage2 : ContentPage
 {
