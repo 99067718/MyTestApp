@@ -9,15 +9,14 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
         configuration = config;
-
     }
 
 	private async void Button_Clicked(object sender, EventArgs e)
 	{
         var settings = configuration.GetRequiredSection("Settings").Get<Settings>();
-        await DisplayAlert("Config", $"{nameof(settings.KeyOne)}: {settings.KeyOne}" +
-            $"{nameof(settings.KeyTwo)}: {settings.KeyTwo}" +
-            $"{nameof(settings.KeyThree.Message)}: {settings.KeyThree.Message}", "OK");
+        //await DisplayAlert("Config", $"{nameof(settings.KeyOne)}: {settings.KeyOne}" +
+          //  $"{nameof(settings.KeyTwo)}: {settings.KeyTwo}" +
+            //$"{nameof(settings.KeyThree.Message)}: {settings.KeyThree.Message}", "OK");
         var gifsOnly =
 			new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
 			{

@@ -23,7 +23,7 @@
                 IsAnimationPlaying="True">
             </Image>
             
-            <toolkit:AvatarView Scale="2" Text="Test" ImageSource="https://tr.rbxcdn.com/e484db187f629db6d8582ee636b4f283/150/150/AvatarHeadshot/Png"/>
+            <toolkit:AvatarView Scale="2" Text="Test" ImageSource="https://tr.rbxcdn.com/e484db187f629db6d8582ee636b4f283/150/150/AvatarHeadshot/Png" />
 
             <Label
                 Text="Hello, World!"

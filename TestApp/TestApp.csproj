@@ -74,6 +74,7 @@
 	  <MauiIcon Include="Resources\AppIcon\appicontroll.svg" />
 	</ItemGroup>
 
+
 	<ItemGroup>
 	  <PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0-preview.61" />
 	  <PackageReference Include="Syncfusion.Maui.Core" Version="20.3.52" />
