@@ -2,17 +2,17 @@
 
 public partial class NewPage2 : ContentPage
 {
-	public NewPage2()
-	{
-		InitializeComponent();
-	}
+    public NewPage2()
+    {
+        InitializeComponent();
+    }
 
-	private async void Button_Clicked(object sender, EventArgs e)
-	{
-		try
-		{
-			var translator = new Dictionary<string, string>();
-			translator.Add(" ", " ");
+    private async void Button_Clicked(object sender, EventArgs e)
+    {
+        try
+        {
+            var translator = new Dictionary<string, string>();
+            translator.Add(" ", " ");
             translator.Add("A", ". -");
             translator.Add("B", "- . . .");
             translator.Add("C", "– · – ·");
@@ -54,7 +54,7 @@ public partial class NewPage2 : ContentPage
             PermissionStatus status = await Permissions.RequestAsync<Permissions.Flashlight>();
             var morse = string.Empty;
 
-            foreach(var c in Text.Text)
+            foreach (var c in Text.Text)
             {
                 morse += translator[c.ToString().ToUpper()] + " ";
             }
@@ -88,10 +88,10 @@ public partial class NewPage2 : ContentPage
             }
             await DisplayAlert("Finished", "Sending code is complete", "ok");
         }
-		catch
-		{
-			await DisplayAlert("Error", "Check if you accepted all permissions and try to not use anything other then letters or numbers", "ok");
-		}
-        
-	}
+        catch
+        {
+            await DisplayAlert("Error", "Check if you accepted all permissions and try to not use anything other then letters or numbers", "ok");
+        }
+
+    }
 }
