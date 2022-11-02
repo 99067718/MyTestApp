@@ -9,6 +9,17 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
 		configuration = config;
+		var byteArray = Preferences.Get("SavedBytes", "");
+		try
+		{
+			var ByteString = ByteConverter.StringToByte(byteArray);
+			var NewStream = ByteConverter.ByteArrayToStream(ByteString);
+			Bot.Source = ImageSource.FromStream(() => NewStream);
+        }
+		catch
+		{
+			HelloThing.Text = "Oh noes, something went wrong";
+		}
 	}
 
 	private async void Button_Clicked(object sender, EventArgs e)
@@ -31,7 +42,17 @@ public partial class MainPage : ContentPage
 		if (result != null)
 		{
 			Stream stream = await result.OpenReadAsync();
-			Bot.Source = ImageSource.FromStream(() => stream);
+			byte[] ConvertedStream = ByteConverter.StreamToByteArray(stream);
+			try
+			{
+                Preferences.Set("SavedBytes", ByteConverter.ByteToString(ConvertedStream));
+            }
+			catch
+			{
+				await DisplayAlert("a", "a", "a");
+			}
+			var newStream = ByteConverter.ByteArrayToStream(ConvertedStream);
+			Bot.Source = ImageSource.FromStream(() => newStream);
 			Bot.IsAnimationPlaying = true;
 		}
 	}
