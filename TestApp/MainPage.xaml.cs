@@ -9,16 +9,25 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
 		configuration = config;
-		var byteArray = Preferences.Get("SavedBytes", "");
+		
+		//var byteArray = Preferences.Get("SavedBytes", "");
 		try
 		{
-			var ByteString = ByteConverter.StringToByte(byteArray);
+
+			if (!File.Exists("ImageData.txt"))
+			{
+				File.Create("ImageData.txt");
+				//FileAccess.ReadWrite
+				File.SetAttributes("ImageData.txt", File.GetAttributes("ImageData.txt"));/////////////////////////////////////
+			}
+            var byteArray = File.ReadAllText("ImageData.txt").ToString();
+            var ByteString = ByteConverter.StringToByte(byteArray);
 			var NewStream = ByteConverter.ByteArrayToStream(ByteString);
 			Bot.Source = ImageSource.FromStream(() => NewStream);
         }
-		catch
+		catch(Exception ex)
 		{
-			HelloThing.Text = "Oh noes, something went wrong";
+			HelloThing.Text = $"{ex}";
 		}
 	}
 
@@ -45,11 +54,12 @@ public partial class MainPage : ContentPage
 			byte[] ConvertedStream = ByteConverter.StreamToByteArray(stream);
 			try
 			{
-                Preferences.Set("SavedBytes", ByteConverter.ByteToString(ConvertedStream));
+				File.WriteAllText("ImageData.txt", ByteConverter.ByteToString(ConvertedStream));
+                //Preferences.Set("SavedBytes", ByteConverter.ByteToString(ConvertedStream));
             }
-			catch
+			catch(Exception ex)
 			{
-				await DisplayAlert("a", "a", "a");
+				await DisplayAlert("a", $"{ex}", "a");
 			}
 			var newStream = ByteConverter.ByteArrayToStream(ConvertedStream);
 			Bot.Source = ImageSource.FromStream(() => newStream);
